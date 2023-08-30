@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+
+model Book {
+  id         Int       @id @default(autoincrement())
+  title      String
+  writer     String
+  coverImage String
+  point      Int
+  tags       String[]
+  created_at DateTime  @default(now())
+    purchase_history  PurchaseHistory[]
+  orders     Order[]   // Bidirectional relationship with Order
+  // ... other fields ...
+}
+
+model User {
+  id         Int       @id @default(autoincrement())
+  name       String
+  email      String    @unique
+  password      String
+  created_at DateTime  @default(now())
+  point      Point? 
+  purchase_history  PurchaseHistory[]
+  orders     Order[]   // Bidirectional relationship with Order
+}
+model Point {
+  id         Int       @id @default(autoincrement())
+  user_id     Int        @unique
+  points     Int
+  created_at DateTime  @default(now())
+  user       User      @relation(fields: [user_id], references: [id])
+}
+
+
+model Order {
+  id         Int       @id @default(autoincrement())
+  user   User   @relation(fields: [user_id], references: [id])
+  book       Book      @relation(fields: [book_id], references: [id])
+  user_id Int
+  book_id    Int
+  quantity    Int  @default(1)
+  created_at DateTime  @default(now())
+
+  @@unique([user_id, book_id])
+}
+
+model Log {
+  id         Int       @id @default(autoincrement())
+  message    String
+  created_at DateTime  @default(now())
+}
+ 
+
+ 
+ model PurchaseHistory {
+  id          Int      @id @default(autoincrement())
+  user        User     @relation(fields: [user_id], references: [id])
+  book        Book     @relation(fields: [book_id], references: [id])
+  user_id      Int
+  book_id      Int
+  quantity    Int
+  price  Int      // Store the calculated total price of the order
+  purchased_at DateTime @default(now())
+
+  @@index([user_id])
+}
