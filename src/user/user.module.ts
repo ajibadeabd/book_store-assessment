@@ -4,7 +4,7 @@ import { UserController } from './user.controller';
 import { UserService } from './user.service';
 import { PrismaModule } from '../repository/prisma.module';
 import { JwtModule } from '@nestjs/jwt';
-import { PointModule } from 'src/point/Point.module';
+import { PointModule } from '../point/Point.module';
 
 @Module({
   imports: [

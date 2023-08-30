@@ -1,7 +1,7 @@
 import { Controller, Post, Body, Res } from '@nestjs/common';
 import { ApiCreatedResponse, ApiTags, ApiOperation } from '@nestjs/swagger'; // Import the necessary decorators
-import { CreateUserDto, LoginUserDto } from 'src/auth/types';
-import { HttpResponse } from 'src/util';
+import { CreateUserDto, LoginUserDto } from '../auth/types';
+import { HttpResponse } from '../util';
 import { UserService } from './user.service';
 
 @Controller('users')

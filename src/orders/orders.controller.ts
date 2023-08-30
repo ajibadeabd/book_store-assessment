@@ -17,7 +17,7 @@ import {
   ApiBearerAuth,
   ApiQuery,
 } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { CreateOrderDto } from './order.type';
 import { OrdersService } from './orders.service';
 // import { CreateOrderDto } from './dto/create-order.dto';

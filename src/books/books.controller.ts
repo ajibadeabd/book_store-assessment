@@ -1,6 +1,6 @@
 import { Controller, Get, Query, Res } from '@nestjs/common';
 import { ApiOkResponse, ApiQuery, ApiTags } from '@nestjs/swagger'; // Import the necessary decorators
-import { HttpResponse } from 'src/util';
+import { HttpResponse } from '../util';
 import { BooksService } from './books.service';
 
 @ApiTags('Books') // Add this decorator to specify the tag for Swagger

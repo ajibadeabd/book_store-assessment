@@ -1,9 +1,9 @@
 // orders.service.ts
 import { HttpException, Injectable } from '@nestjs/common';
-import { BooksService } from 'src/books/books.service';
-import { BrokerService } from 'src/message-broker/message.service';
-import { PointService } from 'src/point/point.service';
-import { IUser } from 'src/user/type';
+import { BooksService } from '../books/books.service';
+import { BrokerService } from '../message-broker/message.service';
+import { PointService } from '../point/point.service';
+import { IUser } from '../user/type';
 import { OrderEntity } from './entity/order.entity';
 
 import { CreateOrderDto } from './order.type';

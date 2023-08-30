@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { HttpException, Injectable } from '@nestjs/common';
-import { CreateUserDto, LoginUserDto } from 'src/auth/types';
+import { CreateUserDto, LoginUserDto } from '../auth/types';
 import { IUser } from './type';
 import { UserEntity } from './entity/user.entity';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
-import { PointService } from 'src/point/point.service';
+import { PointService } from '../point/point.service';
 
 @Injectable()
 export class UserService {
