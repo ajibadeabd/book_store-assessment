@@ -14,7 +14,7 @@ export class LoggingInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     const request = context.switchToHttp().getRequest();
     const logMessage = `${request.method} ${request.url}`;
-    this.brokerService.processOrder(logMessage);
+    this.brokerService.logApi(logMessage);
     return next.handle().pipe(tap(() => {}));
   }
 }

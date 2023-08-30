@@ -8,7 +8,6 @@ export class BrokerService {
   ) {}
 
   async processOrder(data) {
-    console.log('fire');
     this.RmqService.emit('process_order', JSON.stringify(data));
   }
   async logApi(data) {
