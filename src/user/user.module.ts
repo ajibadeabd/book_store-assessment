@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
-import { PointModule } from '../point/Point.module';
+// import { PointModule } from '../point/Point.module';
 import { PrismaModule } from '../repository/prisma.module';
 import { JwtModule } from '@nestjs/jwt';
 import { PointService } from 'src/point/point.service';
