@@ -8,7 +8,6 @@ import { BrokerModule } from './message-broker/message.module';
 import { OrdersModule } from './orders/orders.module';
 import { UserModule } from './user/user.module';
 import { LoggingInterceptor } from './util/logger';
-// import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
   imports: [BooksModule, BrokerModule, UserModule, OrdersModule],
