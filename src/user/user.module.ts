@@ -2,15 +2,15 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
-// import { PointModule } from '../../src/point/point.module';
 import { PointModule } from '../point/Point.module';
 import { PrismaModule } from '../repository/prisma.module';
 import { JwtModule } from '@nestjs/jwt';
+import { PointService } from 'src/point/point.service';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    PointModule,
+    // PointModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       useFactory: async () => ({
@@ -24,7 +24,7 @@ import { JwtModule } from '@nestjs/jwt';
     PrismaModule,
   ],
   controllers: [UserController],
-  providers: [UserService],
+  providers: [UserService, PointService],
   exports: [UserService],
 })
 export class UserModule {}
