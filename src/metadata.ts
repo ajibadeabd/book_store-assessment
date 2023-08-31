@@ -1,0 +1,5 @@
+/* eslint-disable */
+export default async () => {
+    const t = {};
+    return { "@nestjs/swagger": { "models": [[import("./books/entity/book.entity"), { "BookEntity": {} }], [import("./orders/entity/order.entity"), { "OrderEntity": {} }], [import("./point/entity/point.entity"), { "PointEntity": {} }], [import("./user/entity/user.entity"), { "UserEntity": {} }]], "controllers": [[import("./app.controller"), { "AppController": { "getHello": { type: String } } }], [import("./books/books.controller"), { "BooksController": { "getListOfBuy": {} } }], [import("./message-broker/message.controller"), { "BrokerController": { "handleTicketProcessing": {}, "logCalledRoute": {} } }], [import("./orders/orders.controller"), { "OrdersController": { "createOrder": { type: Object }, "getOrders": { type: Object }, "cancelOrder": { type: Object }, "processOrder": { type: Object }, "purchaseOrder": { type: Object } } }], [import("./user/user.controller"), { "UserController": { "createUser": {}, "loginUser": {} } }]] } };
+};
